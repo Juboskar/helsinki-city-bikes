@@ -1,4 +1,4 @@
-# hHelsinki-city-bikes
+# Helsinki-city-bikes
 
 My solution for Solita Dev Academy pre-assignment
 
