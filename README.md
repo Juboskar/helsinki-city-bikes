@@ -1,5 +1,5 @@
-# helsinki-city-bikes
+# hHelsinki-city-bikes
 
-solution for Solita Dev Academy pre-assignment
+My solution for Solita Dev Academy pre-assignment
 
-exercise info: info: https://github.com/solita/dev-academy-2022-fall-exercise
+Exercise info: info: https://github.com/solita/dev-academy-2022-fall-exercise
