@@ -4,7 +4,7 @@ import journeyService from '../services/journeyService';
 const router = express.Router();
 
 router.get('/', (req, res, next) => {
-  const page = req.query.page ? Number(req.query.page) : 10;
+  const page = req.query.page ? Number(req.query.page) : 1;
   const limit = req.query.limit ? Number(req.query.limit) : 10;
 
   journeyService
