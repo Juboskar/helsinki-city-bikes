@@ -1,8 +1,13 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import { PORT, MONGODB_URI } from './config';
+import journeyRouter from './routes/journeys';
+import path from 'path';
+import cors from 'cors';
 
 const app = express();
+
+app.use(cors());
 
 mongoose
   .connect(MONGODB_URI)
@@ -13,9 +18,12 @@ mongoose
     console.log(error.message);
   });
 
-app.get('/api/ping', (_req, res) => {
-  console.log('someone pinged here');
-  res.status(200).send('pong');
+app.use('/api/journeys', journeyRouter);
+
+app.use(express.static(path.join(__dirname, '../static')));
+
+app.get('/', (_req, res) => {
+  res.sendFile(path.join(__dirname, '../static/index.html'));
 });
 
 app.listen(PORT, () => {
