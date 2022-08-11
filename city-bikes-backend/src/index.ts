@@ -3,11 +3,8 @@ import mongoose from 'mongoose';
 import { PORT, MONGODB_URI } from './config';
 import journeyRouter from './routes/journeys';
 import path from 'path';
-import cors from 'cors';
 
 const app = express();
-
-app.use(cors());
 
 mongoose
   .connect(MONGODB_URI)
