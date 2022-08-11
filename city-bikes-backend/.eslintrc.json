@@ -22,11 +22,14 @@
         "jest/prefer-to-have-length": "warn",
         "jest/valid-expect": "error"
       }
+    },
+    {
+      "files": ["importdata.ts"]
     }
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": "./tsconfig.json"
+    "project": "./tsconfig.eslint.json"
   },
   "plugins": ["@typescript-eslint", "prettier"],
   "rules": {
