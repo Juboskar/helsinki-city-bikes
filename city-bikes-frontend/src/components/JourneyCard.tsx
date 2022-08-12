@@ -24,7 +24,10 @@ export const JourneyCard = ({
       <CardContent>
         <Typography variant="h5" sx={{ fontSize: 18, color: 'darkblue' }}>
           From:{' '}
-          <Link to={'/stations/' + journey.departure_station_id}>
+          <Link
+            style={{ textDecoration: 'none' }}
+            to={'/stations/' + journey.departure_station_id}
+          >
             {journey.departure_station_name}
           </Link>
         </Typography>
@@ -37,7 +40,10 @@ export const JourneyCard = ({
 
         <Typography variant="h5" sx={{ fontSize: 18, color: 'darkblue' }}>
           To:{' '}
-          <Link to={'/stations/' + journey.return_station_id}>
+          <Link
+            style={{ textDecoration: 'none' }}
+            to={'/stations/' + journey.return_station_id}
+          >
             {journey.return_station_name}
           </Link>
         </Typography>
