@@ -1,9 +1,9 @@
 import React from 'react';
 import { Button } from '@mui/material';
 import { Route, BrowserRouter, Routes, Link } from 'react-router-dom';
-import HomePage from './pages/homePage';
-import JourneyListPage from './pages/journeyListPage';
-import StationListPage from './pages/stationListPage';
+import HomePage from './pages/HomePage';
+import JourneyListPage from './pages/JourneyListPage';
+import StationListPage from './pages/StationListPage';
 
 function App() {
   return (
