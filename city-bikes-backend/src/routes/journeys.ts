@@ -20,4 +20,17 @@ router.get('/:id', (req, res, next) => {
     .catch((error) => next(error));
 });
 
+router.get('/departure/:id', (req, res, next) => {
+  journeyService
+    .countJourneysByDepartureStation(req.params.id)
+    .then((result) => res.status(200).send({ journeys: result }))
+    .catch((error) => next(error));
+});
+router.get('/return/:id', (req, res, next) => {
+  journeyService
+    .countJourneysByReturnStation(req.params.id)
+    .then((result) => res.status(200).send({ journeys: result }))
+    .catch((error) => next(error));
+});
+
 export default router;

@@ -5,10 +5,14 @@ import { Link } from 'react-router-dom';
 
 export const StationCard = ({
   station,
-  link
+  link,
+  departures,
+  returns
 }: {
   station: Station;
-  link: boolean;
+  link?: boolean;
+  departures?: number;
+  returns?: number;
 }) => {
   return (
     <Card
@@ -37,6 +41,20 @@ export const StationCard = ({
         </Typography>
 
         <br />
+
+        {departures && (
+          <Typography variant="caption" sx={{ fontSize: 14 }}>
+            Departures from station: {departures}
+          </Typography>
+        )}
+
+        <br />
+
+        {returns && (
+          <Typography variant="caption" sx={{ fontSize: 14 }}>
+            Returns to station: {returns}
+          </Typography>
+        )}
 
         {link && <Link to={'/stations/' + station.ID}>show station</Link>}
       </CardContent>

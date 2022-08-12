@@ -14,4 +14,19 @@ const getJourney = (id: string) => {
   return request.then((response) => response.data);
 };
 
-export default { getJourneys, getJourney };
+const countJourneysByDepatureStation = (id: string) => {
+  const request = axios.get<{ journeys: number }>(`${baseUrl}/departure/${id}`);
+  return request.then((response) => response.data);
+};
+
+const countJourneysByReturnStation = (id: string) => {
+  const request = axios.get<{ journeys: number }>(`${baseUrl}/return/${id}`);
+  return request.then((response) => response.data);
+};
+
+export default {
+  getJourneys,
+  getJourney,
+  countJourneysByDepatureStation,
+  countJourneysByReturnStation
+};
