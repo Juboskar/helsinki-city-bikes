@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import { PORT, MONGODB_URI } from './config';
 import journeyRouter from './routes/journeys';
+import stationRouter from './routes/stations';
 import path from 'path';
 
 const app = express();
@@ -16,6 +17,7 @@ mongoose
   });
 
 app.use('/api/journeys', journeyRouter);
+app.use('/api/stations', stationRouter);
 
 app.use(express.static(path.join(__dirname, '../static')));
 
