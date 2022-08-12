@@ -3,10 +3,10 @@ import JourneyListPage from './pages/journeyListPage';
 
 function App() {
   return (
-    <>
-      HELLO WORLD
+    <div>
+      Journeys:
       <JourneyListPage />
-    </>
+    </div>
   );
 }
 
