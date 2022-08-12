@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card } from '@mui/material';
-import { PageInfo } from '../../compoents/pageInfo';
+import { PageInfo } from './pageInfo';
 
 interface PropTypes {
   page: number;

@@ -3,6 +3,7 @@ import { Button } from '@mui/material';
 import { Route, BrowserRouter, Routes, Link } from 'react-router-dom';
 import HomePage from './pages/homePage';
 import JourneyListPage from './pages/journeyListPage';
+import StationListPage from './pages/stationListPage';
 
 function App() {
   return (
@@ -15,13 +16,14 @@ function App() {
           <Button component={Link} to="/journeys">
             Journeys
           </Button>
-          <Button component={Link} to="/">
+          <Button component={Link} to="/stations">
             Stations
           </Button>
         </div>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/journeys" element={<JourneyListPage />} />
+          <Route path="/stations" element={<StationListPage />} />
         </Routes>
       </BrowserRouter>
     </div>
