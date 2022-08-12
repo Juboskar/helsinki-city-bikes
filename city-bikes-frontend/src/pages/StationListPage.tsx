@@ -24,7 +24,7 @@ function StationListPage() {
       </h1>
       <PageInfoCard page={page} setPage={setPage} />
       {stations.map((s) => (
-        <StationCard key={s.ID} station={s} />
+        <StationCard key={s.ID} station={s} link={true} />
       ))}
       <PageInfoCard page={page} setPage={setPage} />
     </>

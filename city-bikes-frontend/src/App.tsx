@@ -3,7 +3,9 @@ import { Button } from '@mui/material';
 import { Route, BrowserRouter, Routes, Link } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import JourneyListPage from './pages/JourneyListPage';
+import JourneyPage from './pages/JourneyPage';
 import StationListPage from './pages/StationListPage';
+import StationPage from './pages/StationPage';
 
 function App() {
   return (
@@ -23,7 +25,9 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/journeys" element={<JourneyListPage />} />
+          <Route path="/journeys/:id" element={<JourneyPage />} />
           <Route path="/stations" element={<StationListPage />} />
+          <Route path="/stations/:id" element={<StationPage />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -9,4 +9,9 @@ const getStations = (page: number, limit: number) => {
   return request.then((response) => response.data);
 };
 
-export default { getStations };
+const getStation = (id: string) => {
+  const request = axios.get<Station>(`${baseUrl}/${id}`);
+  return request.then((response) => response.data);
+};
+
+export default { getStations, getStation };

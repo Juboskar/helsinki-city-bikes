@@ -24,7 +24,9 @@ function JourneyListPage() {
       </h1>
       <PageInfoCard page={page} setPage={setPage} />
       {journeys.map((j) => (
-        <JourneyCard key={j._id} journey={j} />
+        <div key={j._id}>
+          <JourneyCard journey={j} link={true} />
+        </div>
       ))}
       <PageInfoCard page={page} setPage={setPage} />
     </>

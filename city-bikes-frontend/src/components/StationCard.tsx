@@ -1,8 +1,15 @@
 import React from 'react';
 import { Card, CardContent, Typography } from '@mui/material';
 import { Station } from '../types';
+import { Link } from 'react-router-dom';
 
-export const StationCard = ({ station }: { station: Station }) => {
+export const StationCard = ({
+  station,
+  link
+}: {
+  station: Station;
+  link: boolean;
+}) => {
   return (
     <Card
       sx={{ minWidth: 275 }}
@@ -28,6 +35,10 @@ export const StationCard = ({ station }: { station: Station }) => {
         <Typography variant="caption" sx={{ fontSize: 14 }}>
           Capasity: {station.Kapasiteet}
         </Typography>
+
+        <br />
+
+        {link && <Link to={'/stations/' + station.ID}>show station</Link>}
       </CardContent>
     </Card>
   );
