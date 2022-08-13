@@ -3,7 +3,7 @@ import stationService from '../services/stations';
 import { Station } from '../types';
 import { PageInfoCard } from '../components/PageInfoCard';
 import { StationCard } from '../components/StationCard';
-import { Button, Input } from '@mui/material';
+import { Button, Input, Typography } from '@mui/material';
 
 function StationListPage() {
   const [stations, setStations] = useState<Station[]>([]);
@@ -68,14 +68,18 @@ function StationListPage() {
       {!searchResult && <PageInfoCard page={page} setPage={setPage} />}
 
       {searchResult && (
-        <Button
-          style={{ width: '60%', margin: 'auto' }}
-          onClick={() => {
-            setSearchResult(false);
-          }}
-        >
-          Back to station list
-        </Button>
+        <div style={{ width: '60%', margin: 'auto' }}>
+          <Typography variant="caption">
+            Showing maximum of first 10 matching results
+          </Typography>
+          <Button
+            onClick={() => {
+              setSearchResult(false);
+            }}
+          >
+            Back to station list
+          </Button>
+        </div>
       )}
 
       {stations.map((s) => (
