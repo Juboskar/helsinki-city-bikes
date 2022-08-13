@@ -9,8 +9,9 @@ const router = express_1.default.Router();
 router.get('/', (req, res, next) => {
     const page = req.query.page ? Number(req.query.page) : 1;
     const limit = req.query.limit ? Number(req.query.limit) : 10;
+    const sorter = req.query.sort ? String(req.query.sort) : 'date';
     journeyService_1.default
-        .allJourneys(page, limit)
+        .allJourneys(page, limit, sorter)
         .then((result) => res.status(200).send(result))
         .catch((error) => next(error));
 });

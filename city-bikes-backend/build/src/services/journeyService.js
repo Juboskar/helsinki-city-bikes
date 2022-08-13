@@ -13,9 +13,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const journeySchema_1 = __importDefault(require("../models/journeySchema"));
-const allJourneys = (page, limit) => __awaiter(void 0, void 0, void 0, function* () {
+const allJourneys = (page, limit, sorter) => __awaiter(void 0, void 0, void 0, function* () {
     return yield journeySchema_1.default
         .find({})
+        .sort(sorter)
         .skip(page * limit)
         .limit(limit);
 });
