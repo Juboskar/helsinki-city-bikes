@@ -9,7 +9,7 @@ interface PropTypes {
 
 export const PageInfoCard = ({ page, setPage }: PropTypes) => (
   <Card
-    sx={{ minWidth: 275 }}
+    sx={{ minWidth: 400 }}
     style={{
       backgroundColor: 'transparent',
       width: '60%',

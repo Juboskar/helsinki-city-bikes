@@ -40,18 +40,30 @@ function StationListPage() {
 
   return (
     <>
-      <h1 style={{ width: '60%', margin: 'auto', color: 'darkblue' }}>
-        Stations
-      </h1>
-      <form onSubmit={search} style={{ width: '60%', margin: 'auto' }}>
-        <Input
-          onChange={handleChange}
-          value={searchTerm}
-          name="q"
-          style={{ background: 'white' }}
-        />{' '}
-        <Button type="submit">Search</Button>
-      </form>
+      <div
+        style={{
+          minWidth: 400,
+          width: '60%',
+          margin: 'auto',
+          color: 'darkblue'
+        }}
+      >
+        <h1
+          style={{
+            color: 'darkblue'
+          }}
+        >
+          Stations
+        </h1>
+        <form onSubmit={search}>
+          <Input
+            onChange={handleChange}
+            value={searchTerm}
+            style={{ background: 'white' }}
+          />{' '}
+          <Button type="submit">Search</Button>
+        </form>
+      </div>
 
       {!searchResult && <PageInfoCard page={page} setPage={setPage} />}
 
