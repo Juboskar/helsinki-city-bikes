@@ -13,15 +13,15 @@ export interface Journey {
 export interface Station {
   FID: number;
   ID: number;
-  Nimi: string;
-  Namn: string;
-  Name: string;
-  Osoite: string;
-  Adress: string;
-  Kaupunki?: string;
-  Stad?: string;
-  Operaattor?: string;
-  Kapasiteet: number;
+  name_fi: string;
+  name_sv: string;
+  name_en: string;
+  address: string;
+  address_sv: string;
+  city?: string;
+  city_sv?: string;
+  operator?: string;
+  capasity: number;
   x: number;
   y: number;
 }

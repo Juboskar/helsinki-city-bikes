@@ -12,9 +12,23 @@ void (async (): Promise<void> => {
   await StationSchema.deleteMany({});
   await JourneySchema.deleteMany({});
 
-  const stations = await csv({}).fromFile(
-    'data/Helsingin_ja_Espoon_kaupunkipyB6rA4asemat_avoin.csv'
-  );
+  const stations = await csv({
+    headers: [
+      'FID',
+      'ID',
+      'name_fi',
+      'name_sv',
+      'name_en',
+      'address',
+      'address_sv',
+      'city',
+      'city_sv',
+      'operator',
+      'capasity',
+      'x',
+      'y'
+    ]
+  }).fromFile('data/Helsingin_ja_Espoon_kaupunkipyB6rA4asemat_avoin.csv');
 
   await StationSchema.insertMany(stations.map((m) => new StationSchema(m)));
 
@@ -31,10 +45,12 @@ void (async (): Promise<void> => {
     ]
   };
 
-  const file1 = await csv(headers).fromFile('data/2021-05.csv');
-  const file2 = await csv(headers).fromFile('data/2021-06.csv');
-  const file3 = await csv(headers).fromFile('data/2021-07.csv');
-  const journeys = file1.concat(file2, file3);
+  // const file1 = await csv(headers).fromFile('data/2021-05.csv');
+  // const file2 = await csv(headers).fromFile('data/2021-06.csv');
+  // const file3 = await csv(headers).fromFile('data/2021-07.csv');
+  // const journeys = file1.concat(file2, file3);
+
+  const journeys = await csv(headers).fromFile('data/2021-06.csv');
 
   const filtered = journeys.filter(
     (j: Journey) => j.distance >= 10 && j.duration >= 10
