@@ -14,7 +14,7 @@ const findStationByStationId = async (id: string): Promise<Station | null> => {
 
 const findStationsByName = async (name: string): Promise<Station[]> => {
   return await stationSchema
-    .find({ name_en: { $regex: `(?i).*${name}.*(?-i)` } })
+    .find({ name_fi: { $regex: `(?i).*${name}.*(?-i)` } })
     .limit(10);
 };
 
