@@ -11,7 +11,7 @@ Endpoints:
 
 (Note: I only imported June journeys in demo project to save some MongoDB Atlas free tier storage space)
 
-## importing data
+## Importing data
 
 Make a folder named 'data' in projects root and save following files:
 
@@ -29,7 +29,7 @@ Make sure you have set a MONGODB_URI environment variable.
 
 Data should be imported to your database.
 
-## starting app
+## Starting app
 
 Following commands are supposed to run in a city-bikes-backend folder.
 
