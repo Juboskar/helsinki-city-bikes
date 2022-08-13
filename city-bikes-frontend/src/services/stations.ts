@@ -14,4 +14,9 @@ const getStation = (id: string) => {
   return request.then((response) => response.data);
 };
 
-export default { getStations, getStation };
+const getStationsByName = (name: string) => {
+  const request = axios.get<Station[]>(`${baseUrl}/search/${name}`);
+  return request.then((response) => response.data);
+};
+
+export default { getStations, getStation, getStationsByName };
