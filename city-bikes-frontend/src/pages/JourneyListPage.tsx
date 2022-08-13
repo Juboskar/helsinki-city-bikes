@@ -3,7 +3,7 @@ import journeyService from '../services/journeys';
 import { Journey } from '../types';
 import { PageInfoCard } from '../components/PageInfoCard';
 import { JourneyCard } from '../components/JourneyCard';
-import { InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material';
+import { MenuItem, Select, SelectChangeEvent, Typography } from '@mui/material';
 
 function JourneyListPage() {
   const [journeys, setJourneys] = useState<Journey[]>([]);
@@ -25,7 +25,6 @@ function JourneyListPage() {
   };
 
   const handleOrderChange = (event: SelectChangeEvent<string>) => {
-    console.log(event.target.value);
     setOrder(event.target.value);
   };
 
@@ -45,8 +44,15 @@ function JourneyListPage() {
         >
           Journeys
         </h1>
-        <InputLabel>Sort by:</InputLabel>
-        <Select value={sorter} label="sort" onChange={handleChange}>
+        <Typography variant="caption" sx={{ fontSize: 16, color: 'darkblue' }}>
+          Sort:
+        </Typography>{' '}
+        <Select
+          value={sorter}
+          label="sort"
+          onChange={handleChange}
+          variant="standard"
+        >
           <MenuItem value={'departure'}>departure</MenuItem>
           <MenuItem value={'return'}>return</MenuItem>
           <MenuItem value={'departure_station_id'}>
@@ -59,8 +65,13 @@ function JourneyListPage() {
           <MenuItem value={'return_station_name'}>return station name</MenuItem>
           <MenuItem value={'distance'}>distance</MenuItem>
           <MenuItem value={'duration'}>duration</MenuItem>
-        </Select>
-        <Select value={order} label="order" onChange={handleOrderChange}>
+        </Select>{' '}
+        <Select
+          value={order}
+          label={'order'}
+          onChange={handleOrderChange}
+          variant="standard"
+        >
           <MenuItem value={'asc'}>ascending</MenuItem>
           <MenuItem value={'desc'}>descending</MenuItem>
         </Select>
