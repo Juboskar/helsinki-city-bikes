@@ -29,8 +29,13 @@ export const StationCard = ({
     >
       <CardContent>
         <Typography variant="h5" sx={{ fontSize: 18, color: 'darkblue' }}>
-          Station: {station.name_en}
+          {station.name_fi}
         </Typography>
+        <Typography variant="caption" sx={{ fontSize: 14, color: 'darkblue' }}>
+          {station.name_sv} {'\u2022'} {station.name_en}
+        </Typography>
+
+        <br />
         <Typography variant="caption" sx={{ fontSize: 14 }}>
           Address: {station.address}
         </Typography>
