@@ -10,7 +10,8 @@
     "start": "node build/src/index.js",
     "import-data": "ts-node importdata.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint --ext .ts ."
+    "lint": "eslint --ext .ts .",
+    "build:ui": "rm -rf build/static && cd ../city-bikes-frontend/ && npm run build && mv build static &&  cp -r static ../city-bikes-backend/build"
   },
   "author": "juboskar",
   "license": "ISC",
