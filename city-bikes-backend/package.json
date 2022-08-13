@@ -12,7 +12,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --ext .ts .",
     "build:ui": "rm -rf build/static && cd ../city-bikes-frontend/ && npm run build && mv build static &&  cp -r static ../city-bikes-backend/build",
-    "deploy": "git push heroku main",
+    "deploy": "git subtree push --prefix city-bikes-backend heroku master",
     "deploy:full": "npm run tsc && npm run build:ui && git add . && git commit -m build && npm run deploy"
   },
   "author": "juboskar",
