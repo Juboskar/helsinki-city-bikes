@@ -31,7 +31,7 @@ Data should be imported to your database.
 
 ## Starting app
 
-Following commands are supposed to run in a city-bikes-backend folder.
+Following commands are supposed to run in a city-bikes-backend folder. If you're using windows, use wsl or git bash to run commands, scripts are containing linux operations. 
 
 - Run ``` npm run tsc ``` to compile typescript into a javascript build
 
