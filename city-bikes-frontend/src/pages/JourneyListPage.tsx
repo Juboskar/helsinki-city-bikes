@@ -19,7 +19,14 @@ function JourneyListPage() {
 
   return (
     <>
-      <h1 style={{ width: '60%', margin: 'auto', color: 'darkblue' }}>
+      <h1
+        style={{
+          minWidth: 400,
+          width: '60%',
+          margin: 'auto',
+          color: 'darkblue'
+        }}
+      >
         Journeys
       </h1>
       <PageInfoCard page={page} setPage={setPage} />
