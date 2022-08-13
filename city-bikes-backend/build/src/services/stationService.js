@@ -24,7 +24,7 @@ const findStationByStationId = (id) => __awaiter(void 0, void 0, void 0, functio
 });
 const findStationsByName = (name) => __awaiter(void 0, void 0, void 0, function* () {
     return yield stationSchema_1.default
-        .find({ name_en: { $regex: `(?i).*${name}.*(?-i)` } })
+        .find({ name_fi: { $regex: `(?i).*${name}.*(?-i)` } })
         .limit(10);
 });
 exports.default = { allStations, findStationByStationId, findStationsByName };
