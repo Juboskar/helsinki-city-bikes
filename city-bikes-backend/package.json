@@ -4,14 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tsc": "tsc",
+    "tsc": "rm -rf build && tsc",
     "ts-node": "ts-node",
     "dev": "ts-node-dev src/index.ts",
     "start": "node build/src/index.js",
     "import-data": "ts-node importdata.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --ext .ts .",
-    "build:ui": "rm -rf build/static && cd ../city-bikes-frontend/ && npm run build && mv build static &&  cp -r static ../city-bikes-backend/build",
+    "build:ui": "rm -rf build/static && cd ../city-bikes-frontend/ && rm -rf static && npm run build && mv build static &&  cp -r static ../city-bikes-backend/build",
     "deploy": "cd .. && git subtree push --prefix city-bikes-backend heroku master",
     "deploy:full": "npm run tsc && npm run build:ui && git add . && git commit -m build && npm run deploy"
   },
