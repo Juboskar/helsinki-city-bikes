@@ -21,7 +21,7 @@ app.use('/api/stations', stationRouter);
 
 app.use(express.static(path.join(__dirname, '../static')));
 
-app.get('/', (_req, res) => {
+app.get('/*', (_req, res) => {
   res.sendFile(path.join(__dirname, '../static/index.html'));
 });
 
