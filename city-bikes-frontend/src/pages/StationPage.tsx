@@ -44,6 +44,7 @@ const StationPage = () => {
             station={station}
             departures={departures}
             returns={returns}
+            showMap={true}
           />
         </>
       ) : (

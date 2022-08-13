@@ -13,7 +13,7 @@ export const JourneyCard = ({
 }) => {
   return (
     <Card
-      sx={{ minWidth: 275 }}
+      sx={{ minWidth: 400 }}
       style={{
         width: '60%',
         margin: 'auto',

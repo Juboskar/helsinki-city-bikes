@@ -7,16 +7,18 @@ export const StationCard = ({
   station,
   link,
   departures,
-  returns
+  returns,
+  showMap
 }: {
   station: Station;
   link?: boolean;
   departures?: number;
   returns?: number;
+  showMap?: boolean;
 }) => {
   return (
     <Card
-      sx={{ minWidth: 275 }}
+      sx={{ minWidth: 400 }}
       key={station.ID}
       style={{
         width: '60%',
@@ -29,34 +31,37 @@ export const StationCard = ({
         <Typography variant="h5" sx={{ fontSize: 18, color: 'darkblue' }}>
           Station: {station.name_en}
         </Typography>
-
         <Typography variant="caption" sx={{ fontSize: 14 }}>
           Address: {station.address}
         </Typography>
-
         <br />
-
         <Typography variant="caption" sx={{ fontSize: 14 }}>
           Capasity: {station.capasity}
         </Typography>
-
         <br />
-
         {departures && (
           <Typography variant="caption" sx={{ fontSize: 14 }}>
             Departures from station: {departures}
           </Typography>
         )}
-
         <br />
-
         {returns && (
           <Typography variant="caption" sx={{ fontSize: 14 }}>
             Returns to station: {returns}
           </Typography>
         )}
-
         {link && <Link to={'/stations/' + station.ID}>show station</Link>}
+        <br />
+
+        {showMap && (
+          <iframe
+            width="100%"
+            height="400"
+            src={`//maps.google.com/maps?q=
+            ${station.y.toFixed(7)},${station.x.toFixed(7)}
+            &z=15&output=embed`}
+          ></iframe>
+        )}
       </CardContent>
     </Card>
   );
