@@ -22,4 +22,9 @@ const allStations = (page, limit) => __awaiter(void 0, void 0, void 0, function*
 const findStationByStationId = (id) => __awaiter(void 0, void 0, void 0, function* () {
     return yield stationSchema_1.default.findOne({ ID: id });
 });
-exports.default = { allStations, findStationByStationId };
+const findStationsByName = (name) => __awaiter(void 0, void 0, void 0, function* () {
+    return yield stationSchema_1.default
+        .find({ name_en: { $regex: `(?i).*${name}.*(?-i)` } })
+        .limit(10);
+});
+exports.default = { allStations, findStationByStationId, findStationsByName };

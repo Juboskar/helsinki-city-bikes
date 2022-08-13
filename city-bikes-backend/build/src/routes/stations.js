@@ -14,6 +14,13 @@ router.get('/', (req, res, next) => {
         .then((result) => res.status(200).send(result))
         .catch((error) => next(error));
 });
+router.get('/search/:name', (req, res, next) => {
+    const search = req.params.name ? req.params.name : '';
+    stationService_1.default
+        .findStationsByName(search)
+        .then((result) => res.status(200).send(result))
+        .catch((error) => next(error));
+});
 router.get('/:id', (req, res, next) => {
     stationService_1.default
         .findStationByStationId(req.params.id)
