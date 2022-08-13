@@ -1,1 +1,1 @@
-web: npm start --prefix ./city-bikes-ackend
+web: npm start --prefix ./city-bikes-backend
