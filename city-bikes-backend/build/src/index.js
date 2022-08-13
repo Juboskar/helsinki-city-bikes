@@ -21,7 +21,7 @@ mongoose_1.default
 app.use('/api/journeys', journeys_1.default);
 app.use('/api/stations', stations_1.default);
 app.use(express_1.default.static(path_1.default.join(__dirname, '../static')));
-app.get('/', (_req, res) => {
+app.get('/*', (_req, res) => {
     res.sendFile(path_1.default.join(__dirname, '../static/index.html'));
 });
 app.listen(config_1.PORT, () => {
