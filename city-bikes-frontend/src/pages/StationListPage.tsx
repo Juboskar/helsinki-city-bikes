@@ -68,7 +68,7 @@ function StationListPage() {
       {!searchResult && <PageInfoCard page={page} setPage={setPage} />}
 
       {searchResult && (
-        <div style={{ width: '60%', margin: 'auto' }}>
+        <div style={{ width: '60%', margin: 'auto', maxWidth: 400 }}>
           <Typography variant="caption">
             Showing maximum of first 10 matching results
           </Typography>
