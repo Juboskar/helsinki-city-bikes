@@ -1,9 +1,17 @@
 import { Journey } from '../types';
 import journeySchema from '../models/journeySchema';
 
-const allJourneys = async (page: number, limit: number): Promise<Journey[]> => {
+const allJourneys = async (
+  page: number,
+  limit: number,
+  sorter: string,
+  order: string
+): Promise<Journey[]> => {
+  const sorting = `${order === 'asc' ? '' : '-'}${sorter}`;
+
   return await journeySchema
     .find({})
+    .sort(sorting)
     .skip(page * limit)
     .limit(limit);
 };

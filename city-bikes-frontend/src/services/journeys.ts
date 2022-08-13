@@ -2,9 +2,14 @@ import axios from 'axios';
 import { Journey } from '../types';
 const baseUrl = '/api/journeys';
 
-const getJourneys = (page: number, limit: number) => {
+const getJourneys = (
+  page: number,
+  limit: number,
+  sorter: string,
+  order: string
+) => {
   const request = axios.get<Journey[]>(
-    `${baseUrl}?page=${page}&limit=${limit}`
+    `${baseUrl}?page=${page}&limit=${limit}&sort=${sorter}&order=${order}`
   );
   return request.then((response) => response.data);
 };
