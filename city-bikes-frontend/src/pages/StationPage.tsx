@@ -10,6 +10,7 @@ const StationPage = () => {
   const [station, setStation] = useState<Station | null>(null);
   const [departures, setDepartures] = useState<number | undefined>(undefined);
   const [returns, setReturns] = useState<number | undefined>(undefined);
+  const [info, setInfo] = useState('loading...');
 
   useEffect(() => {
     if (id) {
@@ -17,8 +18,12 @@ const StationPage = () => {
         .getStation(id)
         .then((s) => {
           setStation(s);
+          setInfo('Station not found');
         })
-        .catch((e) => console.log(e));
+        .catch((e: Error) => {
+          console.log(e);
+          setInfo(e.message);
+        });
 
       journeyService
         .countJourneysByDepatureStation(id)
@@ -48,7 +53,7 @@ const StationPage = () => {
           />
         </>
       ) : (
-        <>Station not found</>
+        <>{info}</>
       )}
     </>
   );
