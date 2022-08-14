@@ -45,12 +45,12 @@ void (async (): Promise<void> => {
     ]
   };
 
-  // const file1 = await csv(headers).fromFile('data/2021-05.csv');
-  // const file2 = await csv(headers).fromFile('data/2021-06.csv');
-  // const file3 = await csv(headers).fromFile('data/2021-07.csv');
-  // const journeys = file1.concat(file2, file3);
+  const file1 = await csv(headers).fromFile('data/2021-05.csv');
+  const file2 = await csv(headers).fromFile('data/2021-06.csv');
+  const file3 = await csv(headers).fromFile('data/2021-07.csv');
+  const journeys = file1.concat(file2, file3);
 
-  const journeys = await csv(headers).fromFile('data/2021-06.csv');
+  // const journeys = await csv(headers).fromFile('data/2021-06.csv');
 
   const filtered = journeys.filter(
     (j: Journey) => j.distance >= 10 && j.duration >= 10
