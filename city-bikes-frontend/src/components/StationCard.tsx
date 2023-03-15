@@ -62,7 +62,7 @@ export const StationCard = ({
           <iframe
             width="100%"
             height="400"
-            src={`//maps.google.com/maps?q=
+            src={`https://maps.google.com/maps?q=
             ${station.y.toFixed(7)},${station.x.toFixed(7)}
             &z=15&output=embed`}
           ></iframe>
